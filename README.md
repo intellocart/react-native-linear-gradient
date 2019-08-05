@@ -89,10 +89,11 @@ import com.BV.LinearGradient.LinearGradientPackage; // <--- This!
 //...
 @Override
 protected List<ReactPackage> getPackages() {
-  return Arrays.<ReactPackage>asList(
-    new MainReactPackage(),
-    new LinearGradientPackage() // <---- and This!
-  );
+  List<ReactPackage> packages = new PackageList(this).getPackages(); // Create a new ReactPackage Object
+  // Packages that cannot be autolinked yet can be added manually here, for example:
+  // packages.add(new MyReactNativePackage());
+  packages.add(new LinearGradientPackage()); // <---- Add This
+  return packages;
 }
 ```
 
